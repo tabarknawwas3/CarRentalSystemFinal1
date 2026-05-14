@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.image.*?>
+
+<StackPane xmlns:fx="http://javafx.com/fxml"
+           fx:controller="carrentalsystem.controllers.LoginController"
+           prefWidth="1100"
+           prefHeight="680"
+           style="-fx-background-color: #050714;">
+
+    <Circle radius="360"
+            fill="#101936"
+            opacity="0.75"
+            StackPane.alignment="TOP_LEFT"
+            translateX="-170"
+            translateY="-140"/>
+
+    <Circle radius="260"
+            fill="#0c1226"
+            opacity="0.9"
+            StackPane.alignment="BOTTOM_RIGHT"
+            translateX="120"
+            translateY="100"/>
+
+    <HBox alignment="CENTER"
+          maxWidth="1000"
+          maxHeight="600"
+          style="-fx-background-color: #070a18;
+                 -fx-background-radius: 28;
+                 -fx-border-color: #151b35;
+                 -fx-border-radius: 28;
+                 -fx-border-width: 1;
+                 -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.45), 35, 0, 0, 12);">
+
+        <!-- LEFT HERO PANEL -->
+        <StackPane prefWidth="500"
+                   prefHeight="600"
+                   style="-fx-background-radius: 28 0 0 28;">
+
+            <ImageView fitWidth="500"
+                       fitHeight="600"
+                       preserveRatio="false"
+                       smooth="true"
+                       opacity="1">
+                <image>
+                    <Image url="@images/login-bg.png"/>
+                </image>
+            </ImageView>
+
+            <Rectangle width="500"
+                       height="600"
+                       fill="#050714"
+                       opacity="0.35"
+                       arcWidth="50"
+                       arcHeight="50"/>
+
+            <Rectangle width="500"
+                       height="600"
+                       fill="#1b2f7a"
+                       opacity="0.12"
+                       arcWidth="50"
+                       arcHeight="50"/>
+
+            <VBox alignment="CENTER"
+                  spacing="22"
+                  style="-fx-padding: 50;">
+
+                <StackPane>
+                    <Circle radius="64"
+                            fill="rgba(61,90,241,0.18)"
+                            stroke="#3d5af1"
+                            strokeWidth="2"/>
+
+                    <ImageView fx:id="imgLoginCar"
+                               fitWidth="112"
+                               fitHeight="112"
+                               preserveRatio="true"
+                               smooth="true">
+                        <image>
+                            <Image url="@images/login-car.png"/>
+                        </image>
+                    </ImageView>
+                </StackPane>
+
+                <VBox alignment="CENTER" spacing="8">
+                    <Label text="DriveEase"
+                           style="-fx-font-size: 44px;
+                                  -fx-font-weight: bold;
+                                  -fx-text-fill: white;"/>
+
+                    <Label text="CAR RENTAL SYSTEM"
+                           style="-fx-font-size: 12px;
+                                  -fx-text-fill: #8ea2ff;
+                                  -fx-letter-spacing: 4px;"/>
+                </VBox>
+
+                <HBox alignment="CENTER" spacing="10">
+                    <Line startX="0" endX="70" stroke="#3d5af1" strokeWidth="1.4" opacity="0.45"/>
+                    <Circle radius="4" fill="#3d5af1"/>
+                    <Circle radius="6" fill="#3d5af1"/>
+                    <Circle radius="4" fill="#3d5af1"/>
+                    <Line startX="0" endX="70" stroke="#3d5af1" strokeWidth="1.4" opacity="0.45"/>
+                </HBox>
+
+                <VBox alignment="CENTER_LEFT"
+                      spacing="14"
+                      maxWidth="310"
+                      style="-fx-background-color: rgba(5,7,20,0.55);
+                             -fx-background-radius: 18;
+                             -fx-border-color: rgba(255,255,255,0.08);
+                             -fx-border-radius: 18;
+                             -fx-padding: 22;">
+
+                    <HBox alignment="CENTER_LEFT" spacing="12">
+                        <Label text="✓"
+                               style="-fx-text-fill: #63e6be;
+                                      -fx-font-size: 15px;
+                                      -fx-font-weight: bold;"/>
+                        <Label text="Easy customer reservations"
+                               style="-fx-text-fill: #dbe7ff; -fx-font-size: 13px;"/>
+                    </HBox>
+
+                    <HBox alignment="CENTER_LEFT" spacing="12">
+                        <Label text="✓"
+                               style="-fx-text-fill: #63e6be;
+                                      -fx-font-size: 15px;
+                                      -fx-font-weight: bold;"/>
+                        <Label text="Smart fleet management"
+                               style="-fx-text-fill: #dbe7ff; -fx-font-size: 13px;"/>
+                    </HBox>
+
+                    <HBox alignment="CENTER_LEFT" spacing="12">
+                        <Label text="✓"
+                               style="-fx-text-fill: #63e6be;
+                                      -fx-font-size: 15px;
+                                      -fx-font-weight: bold;"/>
+                        <Label text="Invoices and rental contracts"
+                               style="-fx-text-fill: #dbe7ff; -fx-font-size: 13px;"/>
+                    </HBox>
+                </VBox>
+
+                <Label text="Premium dashboard for modern car rental agencies"
+                       wrapText="true"
+                       textAlignment="CENTER"
+                       maxWidth="330"
+                       style="-fx-text-fill: #c7d2fe;
+                              -fx-font-size: 13px;"/>
+            </VBox>
+        </StackPane>
+
+        <!-- RIGHT LOGIN PANEL -->
+        <VBox prefWidth="500"
+              prefHeight="600"
+              alignment="CENTER"
+              style="-fx-padding: 55 65 55 65;
+                     -fx-background-color: #080b1a;
+                     -fx-background-radius: 0 28 28 0;">
+
+            <VBox spacing="22"
+                  maxWidth="380">
+
+                <VBox spacing="8">
+                    <Label text="Welcome back"
+                           style="-fx-font-size: 34px;
+                                  -fx-font-weight: bold;
+                                  -fx-text-fill: #eaf1ff;"/>
+
+                    <Label text="Sign in as admin or customer"
+                           style="-fx-font-size: 13px;
+                                  -fx-text-fill: #8b96b8;"/>
+                </VBox>
+
+                <!-- Role Toggle -->
+                <HBox spacing="0"
+                      style="-fx-background-color: #0d1224;
+                             -fx-background-radius: 12;
+                             -fx-border-color: #1a2040;
+                             -fx-border-radius: 12;
+                             -fx-border-width: 1;
+                             -fx-padding: 5;">
+
+                    <Button fx:id="btnAdmin"
+                            text="⚙  Admin"
+                            onAction="#switchToAdmin"
+                            prefWidth="185"
+                            prefHeight="40"
+                            style="-fx-background-color: #3d5af1;
+                                   -fx-text-fill: white;
+                                   -fx-font-weight: bold;
+                                   -fx-font-size: 13px;
+                                   -fx-background-radius: 9;
+                                   -fx-border-width: 0;
+                                   -fx-cursor: hand;"/>
+
+                    <Button fx:id="btnCustomer"
+                            text="👤  Customer"
+                            onAction="#switchToCustomer"
+                            prefWidth="185"
+                            prefHeight="40"
+                            style="-fx-background-color: transparent;
+                                   -fx-text-fill: #8892b0;
+                                   -fx-font-size: 13px;
+                                   -fx-border-width: 0;
+                                   -fx-cursor: hand;"/>
+                </HBox>
+
+                <VBox spacing="18">
+
+                    <VBox spacing="7">
+                        <Label text="Username"
+                               style="-fx-text-fill: #ccd6f6;
+                                      -fx-font-size: 12px;
+                                      -fx-font-weight: bold;"/>
+
+                        <StackPane>
+                            <TextField fx:id="txtUsername"
+                                       promptText="Enter your username"
+                                       style="-fx-background-color: #0d1224;
+                                              -fx-text-fill: #e6f1ff;
+                                              -fx-prompt-text-fill: #46506f;
+                                              -fx-border-color: #1a2040;
+                                              -fx-border-radius: 12;
+                                              -fx-background-radius: 12;
+                                              -fx-padding: 14 16 14 44;
+                                              -fx-font-size: 14px;"/>
+
+                            <Label text="👤"
+                                   style="-fx-font-size: 14px;"
+                                   StackPane.alignment="CENTER_LEFT"
+                                   translateX="15"/>
+                        </StackPane>
+                    </VBox>
+
+                    <VBox spacing="7">
+                        <Label text="Password"
+                               style="-fx-text-fill: #ccd6f6;
+                                      -fx-font-size: 12px;
+                                      -fx-font-weight: bold;"/>
+
+                        <StackPane>
+                            <PasswordField fx:id="txtPassword"
+                                           promptText="Enter your password"
+                                           onAction="#handleLogin"
+                                           style="-fx-background-color: #0d1224;
+                                                  -fx-text-fill: #e6f1ff;
+                                                  -fx-prompt-text-fill: #46506f;
+                                                  -fx-border-color: #1a2040;
+                                                  -fx-border-radius: 12;
+                                                  -fx-background-radius: 12;
+                                                  -fx-padding: 14 16 14 44;
+                                                  -fx-font-size: 14px;"/>
+
+                            <Label text="🔒"
+                                   style="-fx-font-size: 14px;"
+                                   StackPane.alignment="CENTER_LEFT"
+                                   translateX="15"/>
+                        </StackPane>
+                    </VBox>
+                </VBox>
+
+                <Label fx:id="lblError"
+                       text=""
+                       style="-fx-text-fill: #ff6b6b;
+                              -fx-font-size: 12px;
+                              -fx-background-color: #2d1515;
+                              -fx-background-radius: 8;
+                              -fx-padding: 9 12;"
+                       visible="false"
+                       managed="false"/>
+
+                <Button text="Sign In  →"
+                        onAction="#handleLogin"
+                        prefWidth="380"
+                        prefHeight="50"
+                        style="-fx-background-color: linear-gradient(to right, #3d5af1, #5b7cfa);
+                               -fx-text-fill: white;
+                               -fx-font-size: 15px;
+                               -fx-font-weight: bold;
+                               -fx-background-radius: 13;
+                               -fx-border-width: 0;
+                               -fx-cursor: hand;
+                               -fx-effect: dropshadow(gaussian, rgba(61,90,241,0.35), 18, 0, 0, 7);"/>
+
+                <Button fx:id="btnCreateAccount"
+                        text="Create customer account"
+                        onAction="#openCustomerRegister"
+                        prefWidth="380"
+                        prefHeight="42"
+                        style="-fx-background-color: transparent;
+                               -fx-text-fill: #8ea2ff;
+                               -fx-font-size: 13px;
+                               -fx-font-weight: bold;
+                               -fx-border-color: #24376f;
+                               -fx-border-radius: 10;
+                               -fx-background-radius: 10;
+                               -fx-border-width: 1;
+                               -fx-cursor: hand;"/>
+
+                <HBox alignment="CENTER" spacing="6">
+                    <Circle radius="3" fill="#3d5af1"/>
+                    <Label text="DriveEase v1.0  ·  Secure Login"
+                           style="-fx-text-fill: #46506f; -fx-font-size: 11px;"/>
+                    <Circle radius="3" fill="#3d5af1"/>
+                </HBox>
+
+            </VBox>
+        </VBox>
+
+    </HBox>
+</StackPane>

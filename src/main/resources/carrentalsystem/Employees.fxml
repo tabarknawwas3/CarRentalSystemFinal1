@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.shape.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="carrentalsystem.controllers.EmployeesController"
+      style="-fx-background-color: #060818; -fx-padding: 28;"
+      spacing="16">
+
+    <StackPane prefHeight="210"
+               minHeight="210"
+               maxHeight="210"
+               style="-fx-background-color: #0d1224;
+                      -fx-background-radius: 18;
+                      -fx-border-color: #1a2040;
+                      -fx-border-radius: 18;
+                      -fx-border-width: 1;
+                      -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.28), 20, 0, 0, 8);">
+
+        <ImageView fitWidth="1120"
+                   preserveRatio="true"
+                   smooth="true"
+                   pickOnBounds="true"
+                   StackPane.alignment="CENTER">
+            <image>
+                <Image url="@images/employees-hero.png"/>
+            </image>
+        </ImageView>
+
+        <Rectangle width="1120"
+                   height="210"
+                   fill="#050714"
+                   opacity="0.42"
+                   arcWidth="36"
+                   arcHeight="36"/>
+
+        <VBox spacing="22"
+              style="-fx-padding: 24 34 24 34;"
+              StackPane.alignment="CENTER">
+
+            <HBox alignment="CENTER_LEFT" spacing="12">
+                <VBox spacing="5">
+                    <Label text="Employees"
+                           style="-fx-font-size: 26px;
+                                  -fx-font-weight: bold;
+                                  -fx-text-fill: #e6f1ff;"/>
+
+                    <Label text="Manage staff accounts, roles, branches, and employee details"
+                           style="-fx-font-size: 12px;
+                                  -fx-text-fill: #c7d2fe;"/>
+                </VBox>
+
+                <Region HBox.hgrow="ALWAYS"/>
+
+                <TextField fx:id="txtSearch"
+                           promptText="🔍  Search..."
+                           onAction="#handleSearch"
+                           style="-fx-background-color: rgba(13,18,36,0.88);
+                                  -fx-text-fill: #e6f1ff;
+                                  -fx-prompt-text-fill: #7783a5;
+                                  -fx-border-color: rgba(147,197,253,0.28);
+                                  -fx-border-radius: 8;
+                                  -fx-background-radius: 8;
+                                  -fx-padding: 8 14;
+                                  -fx-pref-width: 200;"/>
+
+                <Button text="+ Add"
+                        onAction="#handleAdd"
+                        style="-fx-background-color: #3d5af1;
+                               -fx-text-fill: white;
+                               -fx-font-weight: bold;
+                               -fx-background-radius: 8;
+                               -fx-border-width: 0;
+                               -fx-padding: 8 18;
+                               -fx-cursor: hand;"/>
+
+                <Button text="✏ Edit"
+                        onAction="#handleEdit"
+                        style="-fx-background-color: rgba(30,58,95,0.90);
+                               -fx-text-fill: #93c5fd;
+                               -fx-font-weight: bold;
+                               -fx-background-radius: 8;
+                               -fx-border-width: 0;
+                               -fx-padding: 8 18;
+                               -fx-cursor: hand;"/>
+
+                <Button text="🗑 Delete"
+                        onAction="#handleDelete"
+                        style="-fx-background-color: rgba(45,21,21,0.92);
+                               -fx-text-fill: #ff6b6b;
+                               -fx-font-weight: bold;
+                               -fx-background-radius: 8;
+                               -fx-border-width: 0;
+                               -fx-padding: 8 18;
+                               -fx-cursor: hand;"/>
+            </HBox>
+
+            <VBox spacing="8">
+                <Label text="Team and Staff Management"
+                       style="-fx-text-fill: white;
+                              -fx-font-size: 25px;
+                              -fx-font-weight: bold;"/>
+
+                <Label text="Organize employee information, assign branches, and manage system access."
+                       wrapText="true"
+                       maxWidth="620"
+                       style="-fx-text-fill: #c7d2fe;
+                              -fx-font-size: 13px;"/>
+
+                <HBox spacing="8" alignment="CENTER_LEFT">
+                    <Label text="●"
+                           style="-fx-text-fill: #a78bfa;
+                                  -fx-font-size: 14px;"/>
+
+                    <Label text="Staff · Branches · Roles"
+                           style="-fx-text-fill: #93c5fd;
+                                  -fx-font-size: 12px;"/>
+                </HBox>
+            </VBox>
+        </VBox>
+    </StackPane>
+
+    <VBox fx:id="formPanel"
+          spacing="14"
+          style="-fx-background-color: #0d1224;
+                 -fx-border-color: #1a2040;
+                 -fx-border-radius: 12;
+                 -fx-background-radius: 12;
+                 -fx-border-width: 1;
+                 -fx-padding: 20;">
+
+        <Label fx:id="lblFormTitle"
+               text="Add New Employee"
+               style="-fx-font-size: 16px;
+                      -fx-font-weight: bold;
+                      -fx-text-fill: #e6f1ff;"/>
+
+        <HBox spacing="16">
+            <VBox spacing="6" HBox.hgrow="ALWAYS">
+                <Label text="First Name *" style="-fx-text-fill: #ccd6f6; -fx-font-size: 12px;"/>
+                <TextField fx:id="txtFirstName" promptText="Ali"
+                           style="-fx-background-color: #060818; -fx-text-fill: #e6f1ff;
+                                  -fx-border-color: #1a2040; -fx-border-radius: 8;
+                                  -fx-background-radius: 8; -fx-padding: 10 14;"/>
+            </VBox>
+
+            <VBox spacing="6" HBox.hgrow="ALWAYS">
+                <Label text="Last Name *" style="-fx-text-fill: #ccd6f6; -fx-font-size: 12px;"/>
+                <TextField fx:id="txtLastName" promptText="Hassan"
+                           style="-fx-background-color: #060818; -fx-text-fill: #e6f1ff;
+                                  -fx-border-color: #1a2040; -fx-border-radius: 8;
+                                  -fx-background-radius: 8; -fx-padding: 10 14;"/>
+            </VBox>
+
+            <VBox spacing="6" HBox.hgrow="ALWAYS">
+                <Label text="Job Title" style="-fx-text-fill: #ccd6f6; -fx-font-size: 12px;"/>
+                <TextField fx:id="txtJobTitle" promptText="Receptionist"
+                           style="-fx-background-color: #060818; -fx-text-fill: #e6f1ff;
+                                  -fx-border-color: #1a2040; -fx-border-radius: 8;
+                                  -fx-background-radius: 8; -fx-padding: 10 14;"/>
+            </VBox>
+        </HBox>
+
+        <HBox spacing="16">
+            <VBox spacing="6" HBox.hgrow="ALWAYS">
+                <Label text="Phone Number" style="-fx-text-fill: #ccd6f6; -fx-font-size: 12px;"/>
+                <TextField fx:id="txtPhoneNumber" promptText="0594444441"
+                           style="-fx-background-color: #060818; -fx-text-fill: #e6f1ff;
+                                  -fx-border-color: #1a2040; -fx-border-radius: 8;
+                                  -fx-background-radius: 8; -fx-padding: 10 14;"/>
+            </VBox>
+
+            <VBox spacing="6" HBox.hgrow="ALWAYS">
+                <Label text="Email" style="-fx-text-fill: #ccd6f6; -fx-font-size: 12px;"/>
+                <TextField fx:id="txtEmail" promptText="employee@example.com"
+                           style="-fx-background-color: #060818; -fx-text-fill: #e6f1ff;
+                                  -fx-border-color: #1a2040; -fx-border-radius: 8;
+                                  -fx-background-radius: 8; -fx-padding: 10 14;"/>
+            </VBox>
+
+            <VBox spacing="6" HBox.hgrow="ALWAYS">
+                <Label text="Salary" style="-fx-text-fill: #ccd6f6; -fx-font-size: 12px;"/>
+                <TextField fx:id="txtSalary" promptText="700.00"
+                           style="-fx-background-color: #060818; -fx-text-fill: #e6f1ff;
+                                  -fx-border-color: #1a2040; -fx-border-radius: 8;
+                                  -fx-background-radius: 8; -fx-padding: 10 14;"/>
+            </VBox>
+        </HBox>
+
+        <HBox spacing="16">
+            <VBox spacing="6" HBox.hgrow="ALWAYS">
+                <Label text="Hire Date" style="-fx-text-fill: #ccd6f6; -fx-font-size: 12px;"/>
+                <DatePicker fx:id="dpHireDate"
+                            maxWidth="Infinity"
+                            style="-fx-background-color: #060818;
+                                   -fx-border-color: #1a2040;
+                                   -fx-border-radius: 8;
+                                   -fx-background-radius: 8;"/>
+            </VBox>
+
+            <VBox spacing="6" HBox.hgrow="ALWAYS">
+                <Label text="Username" style="-fx-text-fill: #ccd6f6; -fx-font-size: 12px;"/>
+                <TextField fx:id="txtUsername" promptText="ali_emp"
+                           style="-fx-background-color: #060818; -fx-text-fill: #e6f1ff;
+                                  -fx-border-color: #1a2040; -fx-border-radius: 8;
+                                  -fx-background-radius: 8; -fx-padding: 10 14;"/>
+            </VBox>
+
+            <VBox spacing="6" HBox.hgrow="ALWAYS">
+                <Label text="Password" style="-fx-text-fill: #ccd6f6; -fx-font-size: 12px;"/>
+                <TextField fx:id="txtPassword" promptText="123456"
+                           style="-fx-background-color: #060818; -fx-text-fill: #e6f1ff;
+                                  -fx-border-color: #1a2040; -fx-border-radius: 8;
+                                  -fx-background-radius: 8; -fx-padding: 10 14;"/>
+            </VBox>
+        </HBox>
+
+        <HBox spacing="16">
+            <VBox spacing="6" HBox.hgrow="ALWAYS">
+                <Label text="Branch ID *" style="-fx-text-fill: #ccd6f6; -fx-font-size: 12px;"/>
+                <TextField fx:id="txtBranchId" promptText="1"
+                           style="-fx-background-color: #060818; -fx-text-fill: #e6f1ff;
+                                  -fx-border-color: #1a2040; -fx-border-radius: 8;
+                                  -fx-background-radius: 8; -fx-padding: 10 14;"/>
+            </VBox>
+
+            <VBox spacing="6" HBox.hgrow="ALWAYS">
+                <Label text="Admin ID" style="-fx-text-fill: #ccd6f6; -fx-font-size: 12px;"/>
+                <TextField fx:id="txtAdminId" promptText="1"
+                           style="-fx-background-color: #060818; -fx-text-fill: #e6f1ff;
+                                  -fx-border-color: #1a2040; -fx-border-radius: 8;
+                                  -fx-background-radius: 8; -fx-padding: 10 14;"/>
+            </VBox>
+        </HBox>
+
+        <HBox spacing="12" alignment="CENTER_RIGHT">
+            <Button text="Cancel"
+                    onAction="#handleCancel"
+                    style="-fx-background-color: #1a2040;
+                           -fx-text-fill: #8892b0;
+                           -fx-background-radius: 8;
+                           -fx-border-width: 0;
+                           -fx-padding: 9 24;
+                           -fx-cursor: hand;"/>
+
+            <Button text="💾 Save"
+                    onAction="#handleSave"
+                    style="-fx-background-color: #3d5af1;
+                           -fx-text-fill: white;
+                           -fx-font-weight: bold;
+                           -fx-background-radius: 8;
+                           -fx-border-width: 0;
+                           -fx-padding: 9 24;
+                           -fx-cursor: hand;"/>
+        </HBox>
+    </VBox>
+
+    <TableView fx:id="tableEmployees"
+               VBox.vgrow="ALWAYS"
+               style="-fx-background-color: #0d1224;
+                      -fx-border-color: #1a2040;
+                      -fx-border-radius: 12;
+                      -fx-background-radius: 12;
+                      -fx-table-cell-border-color: #1a2040;
+                      -fx-control-inner-background: #0d1224;
+                      -fx-control-inner-background-alt: #0a1020;">
+
+        <columns>
+            <TableColumn fx:id="colEmployeeId" text="ID" prefWidth="60"/>
+            <TableColumn fx:id="colFirstName" text="First Name" prefWidth="120"/>
+            <TableColumn fx:id="colLastName" text="Last Name" prefWidth="120"/>
+            <TableColumn fx:id="colJobTitle" text="Job Title" prefWidth="140"/>
+            <TableColumn fx:id="colPhoneNumber" text="Phone" prefWidth="130"/>
+            <TableColumn fx:id="colEmail" text="Email" prefWidth="220"/>
+            <TableColumn fx:id="colSalary" text="Salary" prefWidth="100"/>
+            <TableColumn fx:id="colHireDate" text="Hire Date" prefWidth="120"/>
+            <TableColumn fx:id="colUsername" text="Username" prefWidth="120"/>
+            <TableColumn fx:id="colBranchId" text="Branch ID" prefWidth="90"/>
+            <TableColumn fx:id="colAdminId" text="Admin ID" prefWidth="90"/>
+        </columns>
+    </TableView>
+
+</VBox>

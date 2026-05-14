@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+
+<HBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="carrentalsystem.controllers.AdminDashboardController"
+      style="-fx-background-color: #060818;">
+
+    <!-- Sidebar -->
+    <VBox prefWidth="220"
+          minWidth="220"
+          maxWidth="220"
+          style="-fx-background-color: #0a0f22;
+                 -fx-border-color: #1a2040;
+                 -fx-border-width: 0 1 0 0;">
+
+        <!-- Logo Area -->
+        <VBox alignment="CENTER"
+              spacing="2"
+              prefHeight="76"
+              minHeight="76"
+              maxHeight="76"
+              style="-fx-padding: 4 14 4 14;
+                     -fx-border-color: #1a2040;
+                     -fx-border-width: 0 0 1 0;">
+
+            <Label text="🚗"
+                   style="-fx-font-size: 15px;"/>
+
+            <Label text="DriveEase"
+                   style="-fx-text-fill: #ffffff;
+                          -fx-font-size: 16px;
+                          -fx-font-weight: bold;"/>
+
+            <Label text="Admin Panel"
+                   style="-fx-text-fill: #4f7cff;
+                          -fx-font-size: 10px;"/>
+        </VBox>
+
+        <!-- Menu Buttons -->
+        <VBox spacing="2"
+              style="-fx-padding: 6 10 4 10;">
+
+            <Button fx:id="btnDashboard"
+                    text="▥  Dashboard"
+                    onAction="#showDashboard"
+                    maxWidth="Infinity"/>
+
+            <Button fx:id="btnCustomers"
+                    text="👥  Customers"
+                    onAction="#showCustomers"
+                    maxWidth="Infinity"/>
+
+            <Button fx:id="btnDrivingLicenses"
+                    text="▯  Licenses"
+                    onAction="#showDrivingLicenses"
+                    maxWidth="Infinity"/>
+
+            <Button fx:id="btnBranches"
+                    text="▦  Branches"
+                    onAction="#showBranches"
+                    maxWidth="Infinity"/>
+
+            <Button fx:id="btnCategories"
+                    text="🚙  Categories"
+                    onAction="#showCategories"
+                    maxWidth="Infinity"/>
+
+            <Button fx:id="btnCars"
+                    text="🚗  Cars"
+                    onAction="#showCars"
+                    maxWidth="Infinity"/>
+
+            <Button fx:id="btnCarStatus"
+                    text="▥  Car Status"
+                    onAction="#showCarStatus"
+                    maxWidth="Infinity"/>
+
+            <Button fx:id="btnReservations"
+                    text="◻  Reservations"
+                    onAction="#showReservations"
+                    maxWidth="Infinity"/>
+
+            <Button fx:id="btnContracts"
+                    text="◼  Contracts"
+                    onAction="#showContracts"
+                    maxWidth="Infinity"/>
+
+            <Button fx:id="btnInvoices"
+                    text="💰  Invoices"
+                    onAction="#showInvoices"
+                    maxWidth="Infinity"/>
+
+            <Button fx:id="btnMaintenance"
+                    text="🔧  Maintenance"
+                    onAction="#showMaintenance"
+                    maxWidth="Infinity"/>
+
+            <Button fx:id="btnEmployees"
+                    text="👤  Employees"
+                    onAction="#showEmployees"
+                    maxWidth="Infinity"/>
+
+            <Button fx:id="btnExtras"
+                    text="+  Extras"
+                    onAction="#showExtras"
+                    maxWidth="Infinity"/>
+
+            <Button fx:id="btnReviews"
+                    text="★  Reviews"
+                    onAction="#showReviews"
+                    maxWidth="Infinity"/>
+
+            <Button fx:id="btnReports"
+                    text="📈  Reports"
+                    onAction="#showReports"
+                    maxWidth="Infinity"/>
+
+            <Button text="⏻  Logout"
+                    onAction="#handleLogout"
+                    maxWidth="Infinity"
+                    style="-fx-background-color: #351515;
+                           -fx-text-fill: #ffb4b4;
+                           -fx-font-size: 12px;
+                           -fx-font-weight: bold;
+                           -fx-alignment: CENTER_LEFT;
+                           -fx-background-radius: 8;
+                           -fx-border-width: 0;
+                           -fx-padding: 6 12;
+                           -fx-cursor: hand;"
+                    minHeight="30"
+                    prefHeight="30"
+                    maxHeight="30"/>
+
+            <!-- Admin Info -->
+            <VBox spacing="1"
+                  style="-fx-background-color: #0d1224;
+                         -fx-background-radius: 9;
+                         -fx-border-color: #1a2040;
+                         -fx-border-radius: 9;
+                         -fx-border-width: 1;
+                         -fx-padding: 6 10;">
+
+                <Label text="Logged in as"
+                       style="-fx-text-fill: #4f7cff;
+                              -fx-font-size: 9px;"/>
+
+                <Label fx:id="lblAdminName"
+                       text="Admin"
+                       style="-fx-text-fill: #e6f1ff;
+                              -fx-font-size: 11px;
+                              -fx-font-weight: bold;"/>
+
+                <Label fx:id="lblAdminRole"
+                       text="Administrator"
+                       style="-fx-text-fill: #8892b0;
+                              -fx-font-size: 10px;"/>
+            </VBox>
+
+        </VBox>
+
+    </VBox>
+
+    <!-- Main Content Area -->
+    <StackPane fx:id="contentArea"
+               HBox.hgrow="ALWAYS"
+               style="-fx-background-color: #060818;"/>
+
+</HBox>

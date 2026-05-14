@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.image.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="carrentalsystem.controllers.ReviewsController"
+      style="-fx-background-color: #060818; -fx-padding: 28;"
+      spacing="16">
+
+    <!-- HERO HEADER WITH BACKGROUND IMAGE -->
+    <StackPane prefHeight="210"
+               minHeight="210"
+               maxHeight="210"
+               style="-fx-background-color: #0d1224;
+                      -fx-background-radius: 18;
+                      -fx-border-color: #1a2040;
+                      -fx-border-radius: 18;
+                      -fx-border-width: 1;
+                      -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.28), 20, 0, 0, 8);">
+
+        <ImageView fitWidth="1120"
+                   fitHeight="210"
+                   preserveRatio="false"
+                   smooth="true"
+                   opacity="0.95">
+            <image>
+                <Image url="@images/reviews-hero.png"/>
+            </image>
+        </ImageView>
+
+        <Rectangle width="1120"
+                   height="210"
+                   fill="#050714"
+                   opacity="0.48"
+                   arcWidth="36"
+                   arcHeight="36"/>
+
+        <Rectangle width="1120"
+                   height="210"
+                   fill="#0b1d4a"
+                   opacity="0.20"
+                   arcWidth="36"
+                   arcHeight="36"/>
+
+        <VBox spacing="22"
+              style="-fx-padding: 24 34 24 34;"
+              StackPane.alignment="CENTER">
+
+            <HBox alignment="CENTER_LEFT" spacing="12">
+
+                <VBox spacing="5">
+                    <Label text="Reviews"
+                           style="-fx-font-size: 26px;
+                                  -fx-font-weight: bold;
+                                  -fx-text-fill: #e6f1ff;"/>
+
+                    <Label text="View customer feedback, ratings, and rental experience reviews"
+                           style="-fx-font-size: 12px;
+                                  -fx-text-fill: #c7d2fe;"/>
+                </VBox>
+
+                <Region HBox.hgrow="ALWAYS"/>
+
+                <TextField fx:id="txtSearch"
+                           promptText="🔍  Search reviews..."
+                           onAction="#handleSearch"
+                           style="-fx-background-color: rgba(13,18,36,0.88);
+                                  -fx-text-fill: #e6f1ff;
+                                  -fx-prompt-text-fill: #7783a5;
+                                  -fx-border-color: rgba(147,197,253,0.28);
+                                  -fx-border-radius: 8;
+                                  -fx-background-radius: 8;
+                                  -fx-padding: 8 14;
+                                  -fx-pref-width: 230;"/>
+
+                <Button text="Search"
+                        onAction="#handleSearch"
+                        style="-fx-background-color: #3d5af1;
+                               -fx-text-fill: white;
+                               -fx-font-weight: bold;
+                               -fx-background-radius: 8;
+                               -fx-border-width: 0;
+                               -fx-padding: 8 18;
+                               -fx-cursor: hand;"/>
+
+                <Button text="Refresh"
+                        onAction="#handleRefresh"
+                        style="-fx-background-color: rgba(30,58,95,0.90);
+                               -fx-text-fill: #93c5fd;
+                               -fx-font-weight: bold;
+                               -fx-background-radius: 8;
+                               -fx-border-width: 0;
+                               -fx-padding: 8 18;
+                               -fx-cursor: hand;"/>
+            </HBox>
+
+            <VBox spacing="8">
+                <Label text="Customer Feedback"
+                       style="-fx-text-fill: white;
+                              -fx-font-size: 25px;
+                              -fx-font-weight: bold;"/>
+
+                <Label text="Reviews are submitted by customers and displayed here for admin monitoring only."
+                       wrapText="true"
+                       maxWidth="760"
+                       style="-fx-text-fill: #c7d2fe;
+                              -fx-font-size: 13px;"/>
+
+                <HBox spacing="8" alignment="CENTER_LEFT">
+                    <Label text="●"
+                           style="-fx-text-fill: #63e6be;
+                                  -fx-font-size: 14px;"/>
+
+                    <Label text="Read-only page · Ratings · Comments · Customers · Contracts"
+                           style="-fx-text-fill: #93c5fd;
+                                  -fx-font-size: 12px;"/>
+                </HBox>
+            </VBox>
+
+        </VBox>
+    </StackPane>
+
+    <!-- TABLE ONLY -->
+    <TableView fx:id="tableReviews"
+               VBox.vgrow="ALWAYS"
+               style="-fx-background-color: #0d1224;
+                      -fx-border-color: #1a2040;
+                      -fx-border-radius: 12;
+                      -fx-background-radius: 12;
+                      -fx-table-cell-border-color: #1a2040;
+                      -fx-control-inner-background: #0d1224;
+                      -fx-control-inner-background-alt: #0a1020;">
+
+        <columns>
+            <TableColumn fx:id="colReviewId" text="ID" prefWidth="70"/>
+            <TableColumn fx:id="colRating" text="Rating" prefWidth="90"/>
+            <TableColumn fx:id="colComment" text="Comment" prefWidth="360"/>
+            <TableColumn fx:id="colReviewDate" text="Review Date" prefWidth="140"/>
+            <TableColumn fx:id="colCustomerId" text="Customer ID" prefWidth="120"/>
+            <TableColumn fx:id="colCustomerName" text="Customer" prefWidth="220"/>
+            <TableColumn fx:id="colContractId" text="Contract ID" prefWidth="130"/>
+        </columns>
+    </TableView>
+
+</VBox>
